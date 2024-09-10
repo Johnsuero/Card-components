@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
-
+const { imageUrl, title } = Astro.props;
 ---
+
 <div class="card-container">
 	<Image 
-		src="/images/carrito.jpg"
+		src={imageUrl}
 		alt="carritouno"
 		class="cardImages"
 		width={370}
@@ -12,20 +13,30 @@ import { Image } from "astro:assets";
 	/>
 	<div class="tag-container">
 		<span class="tag">Usado</span>
-		<span class="tag">revisado</span>
-		<span class="tag">tarjeta</span>
-		<span class="tag">tarjeta</span>
+	</div>
+	<div class="title">
+		<h1>{title}</h1>
+	</div>
+	<div class="description">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+			labore et dolore magna aliqua. Ut enim ad minim veniamquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat 
+		</p>
+	</div>
+	<div class="button1">
+		<button>Read More</button>
 	</div>
 </div>
-	</div>
+	
 
 <style>
+
     	.card-container {
 		max-height: 70vh;
 		background-color: #FFFFFF;
 		padding: 8px;
 		border: 1px solid #C3CACD;
 		border-radius: 15px;
+		margin: 2px;
 	}
 	
  	.cardImages {
@@ -45,5 +56,33 @@ import { Image } from "astro:assets";
 		padding: 6px;
 	}
 	
+	.title {
+		margin-left: 10px;
+		font-weight: bold;
+		color: #2C3B40;
+	}
+	
+	
+	.description {
+	max-width: 33vh;
+	margin-left: 15px;
+	color: #A3A7AF;
+	}
+
+	.button1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 45px;
+		margin-bottom: 15px;
+	}
+
+	button {
+		background-color: #626364;
+		border: 1px solid;
+		padding: 12px;
+		color: #f3f3f3;
+		border-radius: 25px;
+	}
 
 </style>
